@@ -9,8 +9,8 @@ source os.conf
 cat << _EOF_ > ./tmp/hosts
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-$CONT_MAN_IP `ssh $CONT_MAN_IP hostname`
-$COMP_MAN_IP `ssh $COMP_MAN_IP hostname`
+$CONT_MAN_IP $CONT_HOSTNAME
+$COMP_MAN_IP $COMP_HOSTNAME
 _EOF_
 
 scp ./tmp/hosts $CONT_MAN_IP:/etc/hosts
