@@ -186,7 +186,7 @@ BOOTPROTO=none
 _EOF_
 scp ./tmp/ifcfg-eth1 $CONT_MAN_IP:/etc/sysconfig/network-scripts/ifcfg-eth1
 
-ssh $CONT_MAN_IP ifdown br-ex; ifup br-ex; ifdown eth1; ifup eth1
+ssh $CONT_MAN_IP ifdown eth1; ifdown br-ex; ifup br-ex; ifup eth1
 
 ssh $CONT_MAN_IP systemctl enable neutron-server.service neutron-openvswitch-agent.service neutron-dhcp-agent.service neutron-metadata-agent.service neutron-l3-agent.service
 ssh $CONT_MAN_IP systemctl restart neutron-server.service neutron-openvswitch-agent.service neutron-dhcp-agent.service neutron-metadata-agent.service neutron-l3-agent.service
@@ -266,7 +266,7 @@ scp ./tmp/ifcfg-br-ex.compute $COMP_MAN_IP:/etc/sysconfig/network-scripts/ifcfg-
 
 scp ./tmp/ifcfg-eth1 $COMP_MAN_IP:/etc/sysconfig/network-scripts/ifcfg-eth1
 
-ssh $COMP_MAN_IP ifdown br-ex; ifup br-ex; ifdown eth1; ifup eth1
+ssh $COMP_MAN_IP ifdown eth1; ifdown br-ex; ifup br-ex; ifup eth1
 
 ssh $COMP_MAN_IP systemctl enable neutron-openvswitch-agent.service
 ssh $COMP_MAN_IP systemctl restart neutron-openvswitch-agent.service
