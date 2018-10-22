@@ -84,4 +84,6 @@ ssh $CONT_MAN_IP systemctl status httpd.service
 source admin-openrc
 openstack project list | grep service > /dev/null 2>&1 && echo "service project already exist" || openstack project create --domain default --description "Service Project" service
 openstack project list
+openstack role list | grep user > /dev/null 2>&1 && echo "user role already exist" || openstack role create user
+openstack role list
 openstack token issue
