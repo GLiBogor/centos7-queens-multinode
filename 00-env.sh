@@ -43,6 +43,9 @@ ssh $COMP_MAN_IP chronyc sources
 
 ##### OpenStack Packages #####
 
+yum -y install centos-release-openstack-queens
+yum -y upgrade
+yum -y install python-openstackclient openstack-selinux
 ssh $CONT_MAN_IP yum -y install centos-release-openstack-queens
 ssh $CONT_MAN_IP yum -y upgrade
 ssh $CONT_MAN_IP yum -y install python-openstackclient openstack-selinux
