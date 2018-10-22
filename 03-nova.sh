@@ -78,6 +78,17 @@ password = $PASSWORD
 [metrics]
 [mks]
 [neutron]
+url = http://${CONT_MAN_IP}:9696
+auth_url = http://${CONT_MAN_IP}:35357
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+region_name = RegionOne
+project_name = service
+username = neutron
+password = $PASSWORD
+service_metadata_proxy = true
+metadata_proxy_shared_secret = e52550a9713f45aa
 [notifications]
 [osapi_v21]
 [oslo_concurrency]
@@ -229,6 +240,15 @@ virt_type = kvm
 [metrics]
 [mks]
 [neutron]
+url = http://${CONT_MAN_IP}:9696
+auth_url = http://${CONT_MAN_IP}:35357
+auth_type = password
+project_domain_name = default
+user_domain_name = default
+region_name = RegionOne
+project_name = service
+username = neutron
+password = $PASSWORD
 [notifications]
 [osapi_v21]
 [oslo_concurrency]
